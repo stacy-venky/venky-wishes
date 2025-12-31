@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>For Stacy 💙</title>
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body{
+  height:100vh;
+  background: linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:white;
+  overflow:hidden;
+}
+
+.page{
+  display:none;
+  text-align:center;
+  animation: fade 1s ease;
+}
+
+.page.active{
+  display:block;
+}
+
+h1{
+  font-size:3.5rem;
+  margin-bottom:20px;
+}
+
+h2{
+  font-size:2.5rem;
+  color:#7dd3ff;
+}
+
+button{
+  margin-top:30px;
+  padding:15px 40px;
+  font-size:1.2rem;
+  border:none;
+  border-radius:30px;
+  background: linear-gradient(45deg,#6dd5fa,#ffffff);
+  color:#003366;
+  cursor:pointer;
+  box-shadow:0 0 20px rgba(255,255,255,0.6);
+}
+
+button:hover{
+  transform:scale(1.08);
+}
+
+.flower{
+  position:absolute;
+  font-size:2rem;
+  animation: float 6s infinite ease-in-out;
+}
+
+@keyframes float{
+  0%{transform:translateY(0);}
+  50%{transform:translateY(-20px);}
+  100%{transform:translateY(0);}
+}
+
+@keyframes fade{
+  from{opacity:0; transform:scale(0.9);}
+  to{opacity:1; transform:scale(1);}
+}
+</style>
+</head>
+<body>
+
+<!-- FLOWERS -->
+<div class="flower" style="top:10%; left:15%;">🌸</div>
+<div class="flower" style="top:20%; right:20%;">🌼</div>
+<div class="flower" style="bottom:15%; left:25%;">🌹</div>
+<div class="flower" style="bottom:20%; right:30%;">🌷</div>
+
+<!-- PAGE 1 -->
+<div class="page active" id="page1">
+  <h1>WELCOME 💐</h1>
+  <button onclick="nextPage(2)">Enter 💙</button>
+</div>
+
+<!-- PAGE 2 -->
+<div class="page" id="page2">
+  <h2>HI My Dear</h2>
+  <h1>Stacy ❤️</h1>
+  <button onclick="nextPage(3)">Next ➤</button>
+</div>
+
+<!-- PAGE 3 -->
+<div class="page" id="page3">
+  <h1>🎉 HAPPY NEW YEAR 🎉</h1>
+  <h2>My Love 💙</h2>
+  <p style="margin-top:20px; font-size:1.3rem; color:#cceeff;">
+    May this year bring endless smiles, love & happiness ✨
+  </p>
+</div>
+
+<script>
+function nextPage(n){
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  document.getElementById('page'+n).classList.add('active');
+}
+</script>
+
+</body>
+</html>
